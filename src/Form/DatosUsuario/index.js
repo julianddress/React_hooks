@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { validarEmail, validarPassword } from "./Validaciones";
 
-const DatosUsuario = () => {
+const DatosUsuario = ({ actualizarPaso }) => {
   
   const [email, setEmail] = useState({value: '', valid: null})
   const [password, setPassword] = useState({value: '', valid: null})
@@ -20,6 +20,7 @@ const DatosUsuario = () => {
         }}
         onSubmit={ (e) => { 
           e.preventDefault() 
+          actualizarPaso(1)
           console.log(email, password)
         }}
         onBlur={() => {
